@@ -49,7 +49,8 @@ ansible all -m shell -a "apt install git" //permission denied since no sudo used
 ansible all -m shell -a "sudo apt install git" //will work since we have used sudo
 ansible all -m shell -a "apt install git" -b //will work since we have used -b ie become sudo
 ansible all -m copy -a "src=hellofile dest=/home/sysops"
-ansible all -m apt -a "name=apache2 state=present" -b
+ansible all -m apt -a "name=apache2 state=present" -b //to install the apache2 package on all hosts in your inventory using the apt package manager
+service apache2 status //to get status whether its instlled or not.
 ansible all -m service -a "name=apache2 state=stopped" -b
 ansible all -m shell -a "free -m"
 
